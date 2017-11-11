@@ -14,3 +14,5 @@ where (
 	(Median <= 50000) OR (Unemployment_rate > 0.065))
 	AND (Major_category != "Engineering")
 ;
+
+-- Exercice
