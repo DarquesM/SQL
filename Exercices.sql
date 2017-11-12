@@ -4,9 +4,9 @@ from recent_grads
 where Major_category like "arts"
 limit 5 ;
 
--- Exercice : Retourner toutes les majors différentes de engineering
--- Avec un salaire médian <= 50000
--- OU avec un taux de personnes sans emploi > 6.5%
+/* Exercice : Retourner toutes les majors différentes de engineering
+Avec un salaire médian <= 50000
+OU avec un taux de personnes sans emploi > 6.5% */
 
 select Major, Total, Median, Unemployment_rate, Major_category
 from recent_grads
@@ -15,4 +15,13 @@ where (
 	AND (Major_category != "Engineering")
 ;
 
--- Exercice
+/* Exercice : Retourner les 20 premieres majors dont la catégorie est différente de engineering
+Trier les résultats dans l'ordre alphabétique
+*/ 
+
+select Major
+from recent_grads
+where Major_category not like "Engineering"
+order by Major 
+limit 20
+;
