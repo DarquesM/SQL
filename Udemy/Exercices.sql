@@ -25,3 +25,11 @@ where Major_category not like "Engineering"
 order by Major 
 limit 20
 ;
+
+/*
+Exercice : Sommer la population de tous les pays pour trouver la population totale
+*/
+
+select sum(population)
+from facts
+where name not like 'world' and area_land !='';
