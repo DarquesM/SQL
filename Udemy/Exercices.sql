@@ -33,3 +33,12 @@ Exercice : Sommer la population de tous les pays pour trouver la population tota
 select sum(population)
 from facts
 where name not like 'world' and area_land !='';
+
+
+#Count number of lines in the whole database
+select count(*)
+from facts;
+
+#Count number of non null values
+select count(population)
+from facts;
