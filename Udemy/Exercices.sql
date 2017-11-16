@@ -42,3 +42,45 @@ from facts;
 #Count number of non null values
 select count(population)
 from facts;
+
+#Combine operations
+select sum(area_land), avg(area_water), COUNT(*)
+from facts
+;
+
+/* Ecrire une requete qui donne la moyenne de la colonne population_growth
+pour les pays ayant une population supérieur à 10 000 000 habitants
+*/
+
+SELECT AVG (population_growth)
+FROM facts
+WHERE population > 10000000
+;
+
+/*
+Compter le nombre de valeurs uniques de birth_rate, on utilise COUNT pour ne pas tenir compte de la valeur NULL
+*/
+
+SELECT COUNT(birth_rate) /*241 lignes*/
+FROM facts
+;
+
+SELECT DISTINCT birth_rate /*217, attention une valeur NULL */
+FROM facts;
+
+SELECT COUNT(DISTINCT birth_rate) /*216*/
+FROM facts
+;
+
+/* Trouver la moyenne des valeurs disctinctes de birth_rate
+pour une pop > 20 000 000
+Trouver la somme de toutes les valeurs disctinctes de la population 
+pour laquelle area_land est > 1 000 000*/
+
+SELECT AVG(DISTINCT birth_rate)
+FROM facts
+WHERE population>20000000;
+
+SELECT SUM(DISTINCT population)
+FROM facts
+WHERE area_land>1000000;
