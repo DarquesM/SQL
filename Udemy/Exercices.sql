@@ -84,3 +84,15 @@ WHERE population>20000000;
 SELECT SUM(DISTINCT population)
 FROM facts
 WHERE area_land>1000000;
+
+/*
+Calculer le ration naissance/morts pour évaluer la croissance de la population
+*/
+SELECT (birth_rate+migration_rate)/death_rate, name, population_growth
+FROM facts 
+WHERE death_rate!=0 AND birth_rate!=0
+;
+
+/*Ecrire une requête pour calculer le nombre d'habitants au 1er janvier 2016 pour chaque pays*/
+query = "SELECT (population*population_growth)+population FROM facts;"
+
